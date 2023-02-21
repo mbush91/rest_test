@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask, request
 import logging as log
 
-log.basicConfig(filename="/log/test.log",level=log.INFO)
+log.basicConfig(filename="test.log",level=log.INFO)
 
 app = Flask(__name__)
 
@@ -10,9 +10,10 @@ def hello():
 	log.info("hello")
 	return "Hello World!"
 
-@app.route('/*')
-def anything():
-	log.info("anything")
+@app.route('/POST')
+def post():
+	j = request.get_json()
+	log.info("get: %s"%str(j))
 	return "anything!"
 
 
