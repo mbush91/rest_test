@@ -10,10 +10,10 @@ def hello():
 	log.info("hello")
 	return "Hello World!"
 
-@app.route('/POST')
-def post():
-	j = request.get_json()
-	log.info("get: %s"%str(j))
+@app.route('/<path:text>', methods=['GET', 'POST'])
+def all():
+	# j = request.get_json()
+	# log.info("get: %s"%str(j))
 	return "anything!"
 
 
