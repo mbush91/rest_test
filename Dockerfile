@@ -12,3 +12,13 @@ COPY . /app
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
 
+FROM builder as dev-envs
+
+RUN apk update && \
+apk add git
+
+RUN addgroup -S docker && \
+adduser -S --shell /bin/bash --ingroup docker vscode
+
+# install Docker tools (cli, buildx, compose)
+COPY --from=gloursdocker/docker / /
