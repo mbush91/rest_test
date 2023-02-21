@@ -9,8 +9,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-	log.info(__name__)
+	log.info("hello")
 	return "Hello World!"
+
+@app.route('/*')
+def anything():
+	log.info("anything")
+	return "anything!"
 
 
 if __name__ == '__main__':
