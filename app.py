@@ -1,9 +1,7 @@
 from flask import Flask
-import logging
+import logging as log
 
-logging.basicConfig(filename="/log/test.log")
-
-log = logging.getLogger("TESTAPP")
+log.basicConfig(filename="/log/test.log",level=log.INFO)
 
 app = Flask(__name__)
 
