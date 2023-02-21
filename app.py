@@ -15,7 +15,7 @@ def all():
 	log.info("huh")
 	return "anything!"
 
-@app.route("/poop/<path:filename>")
+@app.route("/poop/<path>")
 def poop():
 	return "poop!"
 
