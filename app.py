@@ -15,6 +15,9 @@ def all():
 	log.info("huh")
 	return "anything!"
 
+@app.route("/poop/<path:filename>")
+def poop():
+	return "poop!"
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=8000)
